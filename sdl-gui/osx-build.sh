@@ -17,6 +17,6 @@ $CC -O1 ../core/decoder_gen.c -o decoder_gen
 ./decoder_gen dis .
 
 
-cmd="$CC -F/Library/Frameworks -O3 -ggdb -flto $files sdl.c -framework OpenGL -framework SDL2 -o shoebill"
+cmd="$CC -L/opt/homebrew/lib -I/opt/homebrew/include -O3 -ggdb -flto $files sdl.c -framework OpenGL -lSDL2 -lglfw -lGLEW -o shoebill"
 echo $cmd
 $cmd

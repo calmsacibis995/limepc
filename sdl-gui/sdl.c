@@ -35,7 +35,11 @@
 
 static void _print_vers(void)
 {
-    printf("Shoebill v0.0.4 - http://github.com/pruten/shoebill - Peter Rutenbar (c) 2014\n\n");
+#ifdef DEVEL
+    printf("Shoebill v%d - http://github.com/pruten/shoebill\nCopyright (c) 2013-2015 Peter Rutenbar\n\n", VERSION_DEV);
+#else
+    printf("LimePC v%s - https://github.com/calmsacibis995/limepc\nCopyright (c) 2013-2015 Peter Rutenbar\nCopyright (c) 2023 Stefanos Stefanidis.\n\n", VERSION_REL);
+#endif
 }
 
 rb_tree *keymap;
