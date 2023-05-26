@@ -32,14 +32,16 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
 #include "../core/shoebill.h"
+#include "gitrev.h"
 
 static void _print_vers(void)
 {
 #ifdef DEVEL
     printf("Shoebill v%d - http://github.com/pruten/shoebill\nCopyright (c) 2013-2015 Peter Rutenbar\n\n", VERSION_DEV);
 #else
-    printf("LimePC v%s - https://github.com/calmsacibis995/limepc\nCopyright (c) 2013-2015 Peter Rutenbar\nCopyright (c) 2023 Stefanos Stefanidis.\n\n", VERSION_REL);
+    printf("LimePC v%s - https://github.com/calmsacibis995/limepc\nCopyright (c) 2013-2015 Peter Rutenbar\nCopyright (c) 2023 Stefanos Stefanidis.\n", VERSION_REL);
 #endif
+    printf("Git revision %s\n\n", gitrev);
 }
 
 rb_tree *keymap;

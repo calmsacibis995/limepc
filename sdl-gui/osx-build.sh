@@ -16,6 +16,7 @@ $CC -O1 ../core/decoder_gen.c -o decoder_gen
 ./decoder_gen inst .
 ./decoder_gen dis .
 
+./gitrev.sh > gitrev.h
 
 cmd="$CC -L/opt/homebrew/lib -I/opt/homebrew/include -O3 -ggdb -flto $files sdl.c -framework OpenGL -lSDL2 -lglfw -lGLEW -o shoebill"
 echo $cmd
