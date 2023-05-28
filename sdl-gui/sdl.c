@@ -37,7 +37,7 @@
 static void _print_vers(void)
 {
 #ifdef DEVEL
-    printf("Shoebill v%d - http://github.com/pruten/shoebill\nCopyright (c) 2013-2015 Peter Rutenbar\n\n", VERSION_DEV);
+    printf("Shoebill v%s - http://github.com/pruten/shoebill\nCopyright (c) 2013-2015 Peter Rutenbar\n", VERSION_DEV);
 #else
     printf("LimePC v%s - https://github.com/calmsacibis995/limepc\nCopyright (c) 2013-2015 Peter Rutenbar\nCopyright (c) 2023 Stefanos Stefanidis.\n", VERSION_REL);
 #endif
@@ -540,12 +540,20 @@ int main (int argc, char **argv)
     shoebill_video_frame_info_t frame = shoebill_get_video_frame(9, 1);
     
     SDL_Init(SDL_INIT_VIDEO);
-    
+
+#ifdef DEVEL
     SDL_Window *win = SDL_CreateWindow("Shoebill",
                                       SDL_WINDOWPOS_UNDEFINED,
                                       SDL_WINDOWPOS_UNDEFINED,
                                       frame.width, frame.height,
                                       SDL_WINDOW_OPENGL);
+#else
+    SDL_Window *win = SDL_CreateWindow("LimePC",
+                                      SDL_WINDOWPOS_UNDEFINED,
+                                      SDL_WINDOWPOS_UNDEFINED,
+                                      frame.width, frame.height,
+                                      SDL_WINDOW_OPENGL);
+#endif
     
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GLContext glctx = SDL_GL_CreateContext(win);

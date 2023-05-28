@@ -32,7 +32,7 @@
 #include <sys/time.h>
 #include <pthread.h>
 
-#define VERSION_DEV 0.0.5
+#define VERSION_DEV "0.0.5"
 #define VERSION_REL "0.6"
 
 #if (defined WIN32) || (defined _WIN64)
