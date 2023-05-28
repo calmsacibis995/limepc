@@ -31,7 +31,7 @@
 #include <errno.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
-#include "../core/shoebill.h"
+#include "../../core/shoebill.h"
 #include "gitrev.h"
 
 static void _print_vers(void)
